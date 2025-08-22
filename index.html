@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -22,55 +23,100 @@
     <option value="adcommercial">A&amp;D Commercial</option>
   </select>
 
-  <!-- Federal Table -->
-  <table id="federal" class="hidden">
-    <thead>
-      <tr>
-        <th>Organization</th>
-        <th>SAP Supply Chain / Logistics Footprint</th>
-        <th>Primary IT Services Procurement Vehicles</th>
-        <th>Other Enterprise IT Products (Non-SAP)</th>
-        <th>Key Contacts</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>Defense Logistics Agency (DLA)</td>
-        <td>SAP EBS; SAP WMS; migrating to SAP S/4HANA</td>
-        <td>- DLA JETS 2.0 (IDIQ) - GSA Alliant 2 GWAC - GSA Alliant 3 GWAC (planned)</td>
-        <td>Blue Yonder, Qlik Sense, SAS Viya, Cloudera, Splunk</td>
-        <td>Mr. Adarryl M. Roberts – CIO (J6); Director of Logistics Information Services</td>
-      </tr>
-      <tr>
-        <td>U.S. Army (Enterprise)</td>
-        <td>SAP GCSS-Army; LMP; GFEBS</td>
-        <td>- ITES-3S - RS3 - MAPS</td>
-        <td>LandWarNet, AHLTA, CPOF, Analyst’s Notebook, Power BI</td>
-        <td>Mr. William Hepworth – PEO Enterprise (PEO EIS); PEO C3T CIO</td>
-      </tr>
-      <tr>
-        <td>Army Materiel Command (AMC)</td>
-        <td>SAP LMP</td>
-        <td>- ITES-3S - RS3 - MAPS</td>
-        <td>LandWarNet, AHLTA, CPOF, Analyst’s Notebook, ArcGIS</td>
-        <td>Mr. Gabriel T. Saliba – LMP Product Lead; AMC CIO</td>
-      </tr>
-      <tr>
-        <td>Army Aviation &amp; Missile Command (AMCOM)</td>
-        <td>SAP LMP</td>
-        <td>- ITES-3S - RS3 - MAPS</td>
-        <td>LandWarNet, AHLTA, CPOF, Analyst’s Notebook, ArcGIS</td>
-        <td>AMCOM CIO; AMCOM Logistics Center (ALC) IT; PEO Ground Systems</td>
-      </tr>
-      <tr>
-        <td>TACOM (Tank-Automotive &amp; Armaments)</td>
-        <td>SAP LMP</td>
-        <td>- ITES-3S - RS3 - MAPS</td>
-        <td>LandWarNet, AHLTA, CPOF, Analyst’s Notebook, ArcGIS</td>
-        <td>TACOM CIO; TACOM Logistics CIO Office; PEO Ground Systems</td>
-      </tr>
-    </tbody>
-  </table>
+  <!-- Federal Table (auto-generated from Excel) -->
+  <div id="federal" class="hidden">
+    <h3>Federal Propensity List</h3>
+    <table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>Organization</th>
+      <th>SAP Supply Chain / Logistics Footprint</th>
+      <th>Primary IT Services Procurement Vehicles</th>
+      <th>Other Enterprise IT Products (Non-SAP)</th>
+      <th>Key Contacts (Names if available, otherwise Roles)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Defense Logistics Agency (DLA)</td>
+      <td>SAP EBS; SAP WMS; migrating to SAP S/4HANA</td>
+      <td>- DLA JETS 2.0 (IDIQ) - GSA Alliant 2 GWAC - GSA IT Schedule 70 / MAS</td>
+      <td>Blue Yonder, Qlik Sense, SAS Viya, Cloudera, ServiceNow</td>
+      <td>Mr. Adarryl M. Roberts – CIO (J6); Director of Enterprise Business Systems; DLA Contracting (J7)</td>
+    </tr>
+    <tr>
+      <td>U.S. Army (Enterprise)</td>
+      <td>SAP GCSS-Army; LMP; GFEBS</td>
+      <td>- ITES-3S - RS3 - MAPS</td>
+      <td>LandWarNet, AHLTA, CPOF, Analyst’s Notebook, Palantir</td>
+      <td>Mr. William Hepworth – PEO Enterprise (PEO EIS); Army CIO/G-6; Army CHESS Program Office</td>
+    </tr>
+    <tr>
+      <td>Army Materiel Command (AMC)</td>
+      <td>SAP LMP</td>
+      <td>- ITES-3S - RS3 - MAPS</td>
+      <td>LandWarNet, AHLTA, CPOF, Analyst’s Notebook, Army 365</td>
+      <td>Mr. Gabriel T. Saliba – LMP Product Lead; AMC CIO/G-6; AMC G-3/4 Logistics Integration</td>
+    </tr>
+    <tr>
+      <td>Army Aviation & Missile Command (AMCOM)</td>
+      <td>SAP LMP</td>
+      <td>- ITES-3S - RS3 - MAPS</td>
+      <td>LandWarNet, AHLTA, CPOF, Analyst’s Notebook, Army 365</td>
+      <td>AMCOM CIO; AMCOM Logistics Center (ALC) IT; PEO Aviation CIO</td>
+    </tr>
+    <tr>
+      <td>TACOM (Tank-Automotive & Armaments)</td>
+      <td>SAP LMP</td>
+      <td>- ITES-3S - RS3 - MAPS</td>
+      <td>LandWarNet, AHLTA, CPOF, Analyst’s Notebook, Army 365</td>
+      <td>TACOM CIO; TACOM Logistics CIO Office; PEO Ground Combat Systems CIO</td>
+    </tr>
+    <tr>
+      <td>CECOM (Communications-Electronics)</td>
+      <td>SAP LMP</td>
+      <td>- ITES-3S - RS3 - MAPS</td>
+      <td>LandWarNet, AHLTA, CPOF, Analyst’s Notebook, Army 365</td>
+      <td>CECOM CIO/G-6; CECOM Software Engineering Center (SEC); Army PEO C3T</td>
+    </tr>
+    <tr>
+      <td>Joint Munitions Command (JMC)</td>
+      <td>SAP LMP</td>
+      <td>- ITES-3S - RS3 - MAPS</td>
+      <td>LandWarNet, AHLTA, CPOF, Analyst’s Notebook, Army 365</td>
+      <td>JMC CIO; JMC Logistics Directorate; PEO Ammunition CIO</td>
+    </tr>
+    <tr>
+      <td>NAVSUP / Dept. of the Navy</td>
+      <td>Navy ERP (SAP ECC/HANA)</td>
+      <td>- SeaPort-NxG - GSA Alliant 2 - Navy CHESS</td>
+      <td>Navy Cash, RPA bots, Tableau, MyNAVSUP portal, HICS</td>
+      <td>NAVSUP CIO; Navy ERP Program Office; DON CIO</td>
+    </tr>
+    <tr>
+      <td>NASA</td>
+      <td>SAP ECC for finance/logistics</td>
+      <td>- NASA SEWP V GWAC - GSA Alliant 2 - CIO-SP3</td>
+      <td>Oracle DB, Azure, PeopleSoft HR, ServiceNow, PIV system</td>
+      <td>NASA OCIO (Chief Information Officer); NASA Shared Services Center (NSSC)</td>
+    </tr>
+    <tr>
+      <td>DOI (FBMS: DOI, BLM, NPS, BOR)</td>
+      <td>FBMS (SAP)</td>
+      <td>- DOI IBC IDIQs - GSA Alliant 2 - NASA SEWP</td>
+      <td>Tableau, BusinessObjects, ArcGIS, SharePoint, Laserfiche</td>
+      <td>DOI CIO; DOI Interior Business Center (IBC) FBMS Director; Bureau CIOs (BLM, NPS, BOR)</td>
+    </tr>
+    <tr>
+      <td>U.S. Coast Guard (DHS FSMS)</td>
+      <td>FSMS (SAP S/4HANA)</td>
+      <td>- NASA SEWP - GSA Alliant 2 - DHS EAGLE NG</td>
+      <td>AWS GovCloud, Esri ArcGIS, Cisco, Microsoft Teams, Siebel CRM</td>
+      <td>USCG CIO; DHS FSMS Program Office; DHS OCIO Acquisition</td>
+    </tr>
+  </tbody>
+</table>
+  </div>
 
   <!-- Commercial Placeholder -->
   <table id="commercial" class="hidden">
@@ -94,10 +140,10 @@
 
   <script>
     const dropdown = document.getElementById("dropdown");
-    const tables = document.querySelectorAll("table");
+    const sections = document.querySelectorAll("#federal, #commercial, #adcommercial");
 
     dropdown.addEventListener("change", function() {
-      tables.forEach(t => t.classList.add("hidden"));
+      sections.forEach(s => s.classList.add("hidden"));
       if (this.value) {
         document.getElementById(this.value).classList.remove("hidden");
       }
