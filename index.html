@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Type of Client</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 20px; }
+    select { padding: 6px; font-size: 14px; }
+    table { border-collapse: collapse; margin-top: 20px; width: 100%; }
+    th, td { border: 1px solid #ddd; padding: 8px; text-align: left; vertical-align: top; }
+    th { background-color: #f2f2f2; }
+    .hidden { display: none; }
+  </style>
+</head>
+<body>
+
+  <h2>Select Type of Client</h2>
+  <select id="dropdown">
+    <option value="">-- Select --</option>
+    <option value="federal">Federal</option>
+    <option value="commercial">Commercial</option>
+    <option value="adcommercial">A&amp;D Commercial</option>
+  </select>
+
+  <!-- Federal Table -->
+  <table id="federal" class="hidden">
+    <thead>
+      <tr>
+        <th>Organization</th>
+        <th>SAP Supply Chain / Logistics Footprint</th>
+        <th>Primary IT Services Procurement Vehicles</th>
+        <th>Other Enterprise IT Products (Non-SAP)</th>
+        <th>Key Contacts</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Defense Logistics Agency (DLA)</td>
+        <td>SAP EBS; SAP WMS; migrating to SAP S/4HANA</td>
+        <td>- DLA JETS 2.0 (IDIQ) - GSA Alliant 2 GWAC - GSA Alliant 3 GWAC (planned)</td>
+        <td>Blue Yonder, Qlik Sense, SAS Viya, Cloudera, Splunk</td>
+        <td>Mr. Adarryl M. Roberts – CIO (J6); Director of Logistics Information Services</td>
+      </tr>
+      <tr>
+        <td>U.S. Army (Enterprise)</td>
+        <td>SAP GCSS-Army; LMP; GFEBS</td>
+        <td>- ITES-3S - RS3 - MAPS</td>
+        <td>LandWarNet, AHLTA, CPOF, Analyst’s Notebook, Power BI</td>
+        <td>Mr. William Hepworth – PEO Enterprise (PEO EIS); PEO C3T CIO</td>
+      </tr>
+      <tr>
+        <td>Army Materiel Command (AMC)</td>
+        <td>SAP LMP</td>
+        <td>- ITES-3S - RS3 - MAPS</td>
+        <td>LandWarNet, AHLTA, CPOF, Analyst’s Notebook, ArcGIS</td>
+        <td>Mr. Gabriel T. Saliba – LMP Product Lead; AMC CIO</td>
+      </tr>
+      <tr>
+        <td>Army Aviation &amp; Missile Command (AMCOM)</td>
+        <td>SAP LMP</td>
+        <td>- ITES-3S - RS3 - MAPS</td>
+        <td>LandWarNet, AHLTA, CPOF, Analyst’s Notebook, ArcGIS</td>
+        <td>AMCOM CIO; AMCOM Logistics Center (ALC) IT; PEO Ground Systems</td>
+      </tr>
+      <tr>
+        <td>TACOM (Tank-Automotive &amp; Armaments)</td>
+        <td>SAP LMP</td>
+        <td>- ITES-3S - RS3 - MAPS</td>
+        <td>LandWarNet, AHLTA, CPOF, Analyst’s Notebook, ArcGIS</td>
+        <td>TACOM CIO; TACOM Logistics CIO Office; PEO Ground Systems</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- Commercial Placeholder -->
+  <table id="commercial" class="hidden">
+    <thead>
+      <tr><th>Commercial Table</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Data will go here...</td></tr>
+    </tbody>
+  </table>
+
+  <!-- A&D Commercial Placeholder -->
+  <table id="adcommercial" class="hidden">
+    <thead>
+      <tr><th>A&amp;D Commercial Table</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Data will go here...</td></tr>
+    </tbody>
+  </table>
+
+  <script>
+    const dropdown = document.getElementById("dropdown");
+    const tables = document.querySelectorAll("table");
+
+    dropdown.addEventListener("change", function() {
+      tables.forEach(t => t.classList.add("hidden"));
+      if (this.value) {
+        document.getElementById(this.value).classList.remove("hidden");
+      }
+    });
+  </script>
+
+</body>
+</html>
