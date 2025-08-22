@@ -4,26 +4,159 @@
   <meta charset="UTF-8">
   <title>Type of Client</title>
   <style>
-    body { font-family: Arial, sans-serif; margin: 20px; }
-    select { padding: 6px; font-size: 14px; }
-    table { border-collapse: collapse; margin-top: 20px; width: 100%; }
-    th, td { border: 1px solid #ddd; padding: 8px; text-align: left; vertical-align: top; }
-    th { background-color: #f2f2f2; }
-    .hidden { display: none; }
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background-color: #f8fafc;
+      padding: 40px 20px;
+      line-height: 1.6;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      background: white;
+      border-radius: 12px;
+      padding: 40px;
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    }
+
+    h2 {
+      color: #1f2937;
+      margin-bottom: 30px;
+      text-align: center;
+      font-size: 28px;
+      font-weight: 600;
+    }
+
+    .dropdown-container {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    select {
+      padding: 12px 20px;
+      font-size: 16px;
+      border: 2px solid #e5e7eb;
+      border-radius: 8px;
+      background: white;
+      color: #374151;
+      cursor: pointer;
+      transition: border-color 0.2s ease;
+      outline: none;
+      min-width: 200px;
+    }
+
+    select:hover {
+      border-color: #3b82f6;
+    }
+
+    select:focus {
+      border-color: #3b82f6;
+      box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+    }
+
+    .table-container {
+      opacity: 0;
+      transform: translateY(10px);
+      transition: all 0.3s ease;
+    }
+
+    .table-container.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    h3 {
+      color: #1f2937;
+      margin-bottom: 24px;
+      font-size: 24px;
+      font-weight: 600;
+      text-align: center;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      border-radius: 8px;
+      overflow: hidden;
+      border: 1px solid #e5e7eb;
+    }
+
+    th {
+      background-color: #f9fafb;
+      color: #374151;
+      padding: 16px;
+      text-align: left;
+      font-weight: 600;
+      font-size: 14px;
+      border-bottom: 1px solid #e5e7eb;
+    }
+
+    td {
+      padding: 16px;
+      border-bottom: 1px solid #f3f4f6;
+      color: #4b5563;
+      font-size: 14px;
+    }
+
+    tr:nth-child(even) {
+      background-color: #f9fafb;
+    }
+
+    tr:hover {
+      background-color: #f3f4f6;
+    }
+
+    tr:last-child td {
+      border-bottom: none;
+    }
+
+    .hidden {
+      display: none;
+    }
+
+    /* Mobile responsive */
+    @media (max-width: 768px) {
+      .container {
+        margin: 0 10px;
+        padding: 20px;
+      }
+
+      h2 {
+        font-size: 24px;
+      }
+
+      table {
+        font-size: 12px;
+      }
+
+      th, td {
+        padding: 12px 8px;
+      }
+    }
   </style>
 </head>
 <body>
-
-  <h2>Select Type of Client</h2>
-  <select id="dropdown">
-    <option value="">-- Select --</option>
-    <option value="federal">Federal</option>
-    <option value="commercial">Commercial</option>
-    <option value="adcommercial">A&amp;D Commercial</option>
-  </select>
+  <div class="container">
+    <h2>C5MI Biz Dev Dashboard</h2>
+    <div class="dropdown-container">
+      <label for="dropdown" style="display: block; margin-bottom: 8px; font-weight: 600; color: #374151;">Select Client Type</label>
+      <select id="dropdown">
+        <option value="">-- Select --</option>
+        <option value="federal">Federal</option>
+        <option value="commercial">Commercial</option>
+        <option value="adcommercial">A&amp;D Commercial</option>
+      </select>
+    </div>
 
   <!-- Federal Table -->
-  <div id="federal" class="hidden">
+  <div id="federal" class="table-container hidden">
     <h3>Federal Propensity List</h3>
     <table border="1" class="dataframe">
       <thead>
@@ -118,7 +251,7 @@
   </div>
 
   <!-- Commercial Table -->
-  <div id="commercial" class="hidden">
+  <div id="commercial" class="table-container hidden">
     <h3>Commercial Propensity List</h3>
     <table border="1" class="dataframe">
       <thead>
@@ -241,7 +374,7 @@
   </div>
 
   <!-- A&D Commercial Table -->
-  <div id="adcommercial" class="hidden">
+  <div id="adcommercial" class="table-container hidden">
     <h3>Aero and Defense - Commercial Propensity List</h3>
     <table border="1" class="dataframe">
       <thead>
@@ -362,15 +495,26 @@
       </tbody>
     </table>
   </div>
+  </div>
 
   <script>
     const dropdown = document.getElementById("dropdown");
     const sections = document.querySelectorAll("#federal, #commercial, #adcommercial");
 
     dropdown.addEventListener("change", function() {
-      sections.forEach(s => s.classList.add("hidden"));
+      // Hide all sections
+      sections.forEach(s => {
+        s.classList.remove("show");
+        s.classList.add("hidden");
+      });
+
+      // Show selected section
       if (this.value) {
-        document.getElementById(this.value).classList.remove("hidden");
+        const selectedSection = document.getElementById(this.value);
+        selectedSection.classList.remove("hidden");
+        setTimeout(() => {
+          selectedSection.classList.add("show");
+        }, 50);
       }
     });
   </script>
